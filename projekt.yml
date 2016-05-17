@@ -1,0 +1,8 @@
+---
+- hosts: ec2
+  become: yes
+  tasks:
+    - name: "Git clone"
+      yum: name=git
+    - name: "Repo synchro"
+      git: repo=https://github.com/0812anita/wpc-uek.git dest=~/wpc-uek
